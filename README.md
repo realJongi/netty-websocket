@@ -54,10 +54,11 @@ This library will help you create a websocket server, secured with a X.509 (SSL)
       ```
       (in the handler itself OR save the handler instance)
       
-      You can identify incoming/established connections by the WebSocketID:
+      You can identify incoming/established connections by the WebSocketID OR by the Netty Channel:
       
       ```java
       webSocketHandlerLine.getWebSocketID();
+      webSocketHandlerLine.getChannel();
       ```
       
       (add) ExampleHandler:
