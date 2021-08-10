@@ -19,7 +19,7 @@ public class NettyWebSocket {
 
     protected WebSocketSslServer webSocketSslServer;
 
-    public void init0() throws Exception {
+    public void init0() {
         this.webSocketSslServer = new WebSocketSslServer(this);
         this.webSocketSslServer.run();
     }
