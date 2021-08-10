@@ -107,7 +107,7 @@ public class WebSocketHandlerLine extends WebSocketObject {
         }
     }
 
-    public void remove(WebSocketHandler webSocketHandler) {
+    public void remove(/* */WebSocketHandler webSocketHandler) {
         webSocketHandlers.remove(webSocketHandler);
     }
 
