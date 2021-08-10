@@ -8,7 +8,9 @@ This library will help you create a websocket server, secured with a X.509 (SSL)
 
 1. Create a WebSocketHandlerLine without a given Channel:
 
-      `WebSocketHandlerLine webSocketHandlerLine = new WebSocketHandlerLine(null);`
+      ```java
+      WebSocketHandlerLine webSocketHandlerLine = new WebSocketHandlerLine(null);
+      ```
    
 2. Create and add the WebSocketHandler's you want to add:
 
@@ -47,25 +49,35 @@ This library will help you create a websocket server, secured with a X.509 (SSL)
       You can add as many handlers as you want, while the line will follow the order the handlers have been added.
       You can remove a handler, for example a authentication handler after a successful authentication:
       
-      `webSocketHandlerLine.remove(this);` (in the handler itself OR save the handler instance)
+      ```java
+      webSocketHandlerLine.remove(this);
+      ```
+      (in the handler itself OR save the handler instance)
       
       You can identify incoming/established connections by the WebSocketID:
       
-      `webSocketHandlerLine.getWebSocketID();`
-    
+      ```java
+      webSocketHandlerLine.getWebSocketID();
+      ```
       
       (add) ExampleHandler:
       
-      `webSocketHandlerLine.add(new ExampleHandler());`
+      ```java
+      webSocketHandlerLine.add(new ExampleHandler());
+      ```
       
 3. Create a NettyWebSocket instance and initialize the server:
 
-     `NettyWebSocket nettyWebSocket = new NettyWebSocket(/*port:*/4000, new WebSocketKeystore(/*path to keystore file:*/"server.keystore", /*password for keystore file:*/"password"), webSocketHandlerLine);
-      nettyWebSocket.init0();`
+     ```java
+     NettyWebSocket nettyWebSocket = new NettyWebSocket(/*port:*/4000, new WebSocketKeystore(/*path to keystore file:*/"server.keystore", /*password for keystore file:*/"password"), webSocketHandlerLine);
+      nettyWebSocket.init0();
+      ```
       
 4. Close the NettyWebSocket (optional):
 
-     `nettyWebSocket.close0();`
+     ```java
+     nettyWebSocket.close0();
+     ```
 
 ## Libraries used
 
