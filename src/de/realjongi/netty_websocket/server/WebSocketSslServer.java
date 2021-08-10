@@ -22,7 +22,7 @@ public class WebSocketSslServer {
 
     private Channel ch;
 
-    public WebSocketSslServer run() throws Exception {
+    public WebSocketSslServer run() {
 
         Thread t = new Thread(new Runnable() {
 
