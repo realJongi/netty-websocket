@@ -14,7 +14,7 @@ This library will help you create a websocket server, secured with a X.509 (SSL)
    
 2. Create and add the WebSocketHandler's you want to add:
 
-      (Create) ExampleHandler.java class:
+      * Create ExampleHandler.java class:
     
       ```java
       import de.realjongi.netty_websocket.handler.WebSocketHandler;
@@ -61,7 +61,7 @@ This library will help you create a websocket server, secured with a X.509 (SSL)
       webSocketHandlerLine.getChannel();
       ```
       
-      (add) ExampleHandler:
+      * Add ExampleHandler:
       
       ```java
       webSocketHandlerLine.add(new ExampleHandler());
