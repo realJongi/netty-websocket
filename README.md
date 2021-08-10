@@ -47,6 +47,13 @@ This library will help you create a websocket server, secured with a X.509 (SSL)
       }
       ```
       
+      * Add ExampleHandler:
+      
+      
+      ```java
+      webSocketHandlerLine.add(new ExampleHandler());
+      ```
+      
       You can add as many handlers as you want, while the line will follow the order the handlers have been added.
       You can remove a handler, for example a authentication handler after a successful authentication:
       
@@ -60,13 +67,6 @@ This library will help you create a websocket server, secured with a X.509 (SSL)
       ```java
       webSocketHandlerLine.getWebSocketID();
       webSocketHandlerLine.getChannel();
-      ```
-      
-      * Add ExampleHandler:
-      
-      
-      ```java
-      webSocketHandlerLine.add(new ExampleHandler());
       ```
       
 3. Create a NettyWebSocket instance and initialize the server:
