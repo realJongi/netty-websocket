@@ -90,4 +90,4 @@ This library will help you create a websocket server, secured with a X.509 (SSL)
 
 (except used libraries) Copyright 2021 by realJongi
 
-Licensed under the [MIT License]
+Licensed under the [MIT License](LICENSE.md)
