@@ -14,7 +14,8 @@ This library will help you create a websocket server, secured with a X.509 (SSL)
 
       (Create) ExampleHandler.java class:
     
-     import de.realjongi.netty_websocket.handler.WebSocketHandler;
+      ```java
+      import de.realjongi.netty_websocket.handler.WebSocketHandler;
       import de.realjongi.netty_websocket.handler.WebSocketHandlerLine;
 
       public class ExampleHandler implements WebSocketHandler {
@@ -41,6 +42,7 @@ This library will help you create a websocket server, secured with a X.509 (SSL)
               System.out.println("Closed");
           }
       }
+      ```
       
       You can add as many handlers as you want, while the line will follow the order the handlers have been added.
       You can remove a handler, for example a authentication handler after a successful authentication:
