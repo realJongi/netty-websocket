@@ -23,18 +23,32 @@ public class WebSocketSslServer {
     private Channel ch;
 
     public WebSocketSslServer run() throws Exception {
-        try {
-            b.group(bossGroup, workerGroup)
-                    .channel(NioServerSocketChannel.class)
-                    .childHandler(new WebSocketSslServerInitializer(new WebSocketSslServerSslContext(nettyWebSocket), nettyWebSocket));
 
-            ch = b.bind(nettyWebSocket.getPort()).sync().channel();
-            ch.closeFuture().sync();
-            return this;
-        } finally {
-            bossGroup.shutdownGracefully();
-            workerGroup.shutdownGracefully();
-        }
+        Thread t = new Thread(new Runnable() {
+
+            public void run() {
+                bossGroup = new NioEventLoopGroup();
+                workerGroup = new NioEventLoopGroup();
+
+                try {
+                    b.group(bossGroup, workerGroup)
+                            .channel(NioServerSocketChannel.class)
+                            .childHandler(new WebSocketSslServerInitializer(new WebSocketSslServerSslContext(nettyWebSocket), nettyWebSocket));
+
+                    ch = b.bind(nettyWebSocket.getPort()).sync().channel();
+                    ch.closeFuture().sync();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    bossGroup.shutdownGracefully();
+                    workerGroup.shutdownGracefully();
+                }
+            }
+
+        });
+        t.start();
+
+        return this;
     }
 
     public void close() {
