@@ -4,6 +4,12 @@
 
 This library will help you create a websocket server, secured with a X.509 (SSL) keystore with Netty, so that you can handle websocket connections in Java.
 
+## Generate SSH keystore
+
+In order to use SSL websocket connections, you need to generate a SSL keystore for your hostname (eg. api.roomtube.de):
+
+Use 'generate.sh' on your linux server and follow the given steps.
+
 ## How to
 
 1. Create a WebSocketHandlerLine without a given Channel:
